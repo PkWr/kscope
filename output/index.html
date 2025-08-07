@@ -1,0 +1,159 @@
+
+    <html>
+    <head>
+        <title>Kaleidoscope Viewer</title>
+        <meta charset='UTF-8'>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                background: #111;
+                color: #eee;
+                font-family: sans-serif;
+                overflow: hidden;
+            }
+            #fullscreen-toggle {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                padding: 10px 15px;
+                background: #222;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                z-index: 10;
+            }
+        </style>
+        <script>
+            let gifs = [
+                    'kaleidoscope_000.gif',
+                'kaleidoscope_001.gif',
+                'kaleidoscope_002.gif',
+                'kaleidoscope_003.gif',
+                'kaleidoscope_004.gif',
+                'kaleidoscope_005.gif',
+                'kaleidoscope_006.gif',
+                'kaleidoscope_007.gif',
+                'kaleidoscope_008.gif',
+                'kaleidoscope_009.gif',
+                'kaleidoscope_141.gif',
+                'kaleidoscope_142.gif',
+                'kaleidoscope_143.gif',
+                'kaleidoscope_144.gif',
+                'kaleidoscope_145.gif',
+                'kaleidoscope_146.gif',
+                'kaleidoscope_147.gif',
+                'kaleidoscope_148.gif',
+                'kaleidoscope_149.gif',
+                'kaleidoscope_150.gif',
+                'kaleidoscope_151.gif',
+                'kaleidoscope_152.gif',
+                'kaleidoscope_153.gif',
+                'kaleidoscope_154.gif',
+                'kaleidoscope_155.gif',
+                'kaleidoscope_156.gif',
+                'kaleidoscope_157.gif',
+                'kaleidoscope_158.gif',
+                'kaleidoscope_159.gif',
+                'kaleidoscope_160.gif',
+                'kaleidoscope_161.gif',
+                'kaleidoscope_162.gif',
+                'kaleidoscope_163.gif',
+                'kaleidoscope_164.gif',
+                'kaleidoscope_165.gif',
+                'kaleidoscope_166.gif',
+                'kaleidoscope_167.gif',
+                'kaleidoscope_168.gif',
+                'kaleidoscope_169.gif',
+                'kaleidoscope_170.gif',
+                'kaleidoscope_171.gif',
+                'kaleidoscope_172.gif',
+                'kaleidoscope_173.gif',
+                'kaleidoscope_174.gif',
+                'kaleidoscope_175.gif',
+                'kaleidoscope_176.gif',
+                'kaleidoscope_177.gif',
+                'kaleidoscope_178.gif',
+                'kaleidoscope_179.gif',
+                'kaleidoscope_180.gif',
+                'kaleidoscope_181.gif',
+                'kaleidoscope_182.gif',
+                'kaleidoscope_183.gif',
+                'kaleidoscope_184.gif',
+                'kaleidoscope_185.gif',
+                'kaleidoscope_186.gif',
+                'kaleidoscope_187.gif',
+                'kaleidoscope_188.gif',
+                'kaleidoscope_189.gif',
+                'kaleidoscope_190.gif',
+                'kaleidoscope_191.gif',
+                'kaleidoscope_192.gif',
+                'kaleidoscope_193.gif',
+                'kaleidoscope_194.gif',
+                'kaleidoscope_195.gif',
+                'kaleidoscope_196.gif',
+                'kaleidoscope_197.gif',
+                'kaleidoscope_198.gif',
+                'kaleidoscope_199.gif',
+                'kaleidoscope_200.gif',
+                'kaleidoscope_201.gif',
+                'kaleidoscope_202.gif',
+                'kaleidoscope_203.gif',
+                'kaleidoscope_204.gif',
+                'kaleidoscope_205.gif',
+                'kaleidoscope_206.gif',
+                'kaleidoscope_207.gif',
+                'kaleidoscope_208.gif',
+                'kaleidoscope_209.gif',
+                'kaleidoscope_210.gif',
+                'kaleidoscope_211.gif',
+                'kaleidoscope_212.gif',
+                'kaleidoscope_213.gif',
+                'kaleidoscope_214.gif',
+                'kaleidoscope_215.gif',
+                'kaleidoscope_216.gif',
+                'kaleidoscope_217.gif',
+                'kaleidoscope_218.gif',
+                'kaleidoscope_219.gif',
+                'kaleidoscope_220.gif',
+                'kaleidoscope_221.gif',
+                'kaleidoscope_222.gif',
+                'kaleidoscope_223.gif',
+                'kaleidoscope_224.gif',
+                'kaleidoscope_225.gif',
+                'kaleidoscope_226.gif',
+                'kaleidoscope_227.gif',
+                'kaleidoscope_228.gif',
+                'kaleidoscope_229.gif',
+                'kaleidoscope_230.gif',
+                'kaleidoscope_231.gif',
+                'kaleidoscope_232.gif',
+                'kaleidoscope_233.gif',
+                'kaleidoscope_234.gif',
+                'kaleidoscope_235.gif',
+                'kaleidoscope_236.gif',
+                'kaleidoscope_237.gif',
+            ];
+            let index = 0;
+            function cycle() {
+                document.getElementById('kaleido').src = gifs[index];
+                index = (index + 1) % gifs.length;
+            }
+            setInterval(cycle, 5000);
+
+            function toggleFullscreen() {
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen();
+                } else {
+                    document.exitFullscreen();
+                }
+            }
+        </script>
+    </head>
+    <body onclick="toggleFullscreen()">
+        <button id='fullscreen-toggle'>Toggle Fullscreen</button>
+        <img id='kaleido' src='kaleidoscope_000.gif' style='position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90vmin;border-radius:50%;'>
+    </body>
+    </html>
+    
