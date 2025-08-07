@@ -1,0 +1,19 @@
+# macOS system files
+.DS_Store
+
+# Python virtual environment
+.venv/
+
+# VS Code settings
+.vscode/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Output files (comment out if you want to push these)
+# output/*.gif
+
+# Logs and temporary
+*.log
+*.tmp
