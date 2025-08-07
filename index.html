@@ -1,0 +1,62 @@
+
+    <html>
+    <head>
+        <title>Kaleidoscope Viewer</title>
+        <meta charset='UTF-8'>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                background: #111;
+                color: #eee;
+                font-family: sans-serif;
+                overflow: hidden;
+            }
+            #fullscreen-toggle {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                padding: 10px 15px;
+                background: #222;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                z-index: 10;
+            }
+        </style>
+        <script>
+            let gifs = [
+                    'output/kaleidoscope_000.gif',
+                'output/kaleidoscope_001.gif',
+                'output/kaleidoscope_002.gif',
+                'output/kaleidoscope_003.gif',
+                'output/kaleidoscope_004.gif',
+                'output/kaleidoscope_005.gif',
+                'output/kaleidoscope_006.gif',
+                'output/kaleidoscope_007.gif',
+                'output/kaleidoscope_008.gif',
+                'output/kaleidoscope_009.gif',
+            ];
+            let index = 0;
+            function cycle() {
+                document.getElementById('kaleido').src = gifs[index];
+                index = (index + 1) % gifs.length;
+            }
+            setInterval(cycle, 5000);
+
+            function toggleFullscreen() {
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen();
+                } else {
+                    document.exitFullscreen();
+                }
+            }
+        </script>
+    </head>
+    <body onclick="toggleFullscreen()">
+        <button id='fullscreen-toggle'>Toggle Fullscreen</button>
+        <img id='kaleido' src='output/kaleidoscope_000.gif' style='position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90vmin;border-radius:50%;'>
+    </body>
+    </html>
+    
